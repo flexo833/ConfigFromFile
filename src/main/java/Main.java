@@ -21,8 +21,8 @@ public class Main {
 
         private String action;
 
-        Action(String description) {
-            this.action = description;
+        Action(String action) {
+            this.action = action;
         }
 
         public String getAction() {
