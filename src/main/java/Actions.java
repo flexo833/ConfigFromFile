@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
 
-public class Actions {
+public interface Actions {
 
 
     public enum Action {
