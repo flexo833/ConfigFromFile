@@ -1,10 +1,8 @@
-import java.util.Arrays;
-import java.util.List;
 
 public interface Actions {
 
 
-    public enum Action {
+     enum Action {
         openUrl("openUrl"),
         Click("Click"),
         SetValue("SetValue"),

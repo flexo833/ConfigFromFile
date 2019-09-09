@@ -1,28 +1,22 @@
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.File;
 import java.io.IOException;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import static repackage.Repackage.copyFile;
 
 
-public class Step {
 
 
-    public Step() {
+
+class Step {
+
+
+    Step() {
 
     }
 
-    public void runStep(String action, String param, WebDriver driver, WebDriverWait wait) throws Exception {
+    void runStep(String action, String param, WebDriver driver, WebDriverWait wait) throws Exception {
         boolean verify = verifyActionIsValid(action);
         if (verify) {
 
@@ -48,7 +42,7 @@ public class Step {
             if (action.equals((Actions.Action.ClickEnter).getAction())) {
                 driver.findElement(By.xpath(param)).sendKeys(Keys.ENTER);
             }
-            if (action.equals(Actions.Action.Screenshot)) {
+            if (action.equals((Actions.Action.Screenshot).getAction())) {
                 File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
                 try {
                     FileUtils.copyFile(scrFile, new File("c:\\test\\screenshot.png"));
@@ -62,13 +56,13 @@ public class Step {
     }
 
 
-    public static void verifyElementIsVisible(WebDriver driver, String param) {
+    private static void verifyElementIsVisible(WebDriver driver, String param) {
 
         boolean b = driver.findElement(By.xpath(param)).isDisplayed();
         System.out.println(b);
     }
 
-    public boolean verifyActionIsValid(String action) {
+    private boolean verifyActionIsValid(String action) {
 
 
         if (action.equals(Actions.Action.openUrl.getAction())) {
@@ -79,10 +73,7 @@ public class Step {
             return true;
         } else if (action.equals(Actions.Action.Screenshot.getAction())) {
             return true;
-        } else if (action.equals(Actions.Action.ClickEnter.getAction())) {
-            return true;
-        }
+        } else return action.equals(Actions.Action.ClickEnter.getAction());
 
-        return false;
     }
 }
