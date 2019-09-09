@@ -2,11 +2,9 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.io.File;
 import java.io.IOException;
-
-
-
 
 
 class Step {
@@ -27,7 +25,6 @@ class Step {
 
             if (action.equals(Actions.Action.Click.getAction())) {
                 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(param)));
-                verifyElementIsVisible(driver, param);
                 driver.findElement(By.xpath(param)).click();
 
             }
@@ -56,13 +53,6 @@ class Step {
 
     }
 
-
-    private static void verifyElementIsVisible(WebDriver driver, String param) {
-
-        boolean b = driver.findElement(By.xpath(param)).isDisplayed();
-        System.out.println(b);
-
-    }
 
     private boolean verifyActionIsValid(String action) {
 

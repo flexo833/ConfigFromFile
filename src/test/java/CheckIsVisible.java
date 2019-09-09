@@ -13,19 +13,20 @@ import java.util.List;
 
 public class CheckIsVisible extends Assert {
     @Before
-        public void SetUp() {
+    public void SetUp() {
         System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver.exe");
 
 
     }
+
     @After
-    public void TearDown(){
+    public void TearDown() {
 
     }
 
 
     @Test
-    public void CheckIsElementVisible(){
+    public void CheckIsElementVisible() {
         WebDriver driver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(driver, 10);
         try {
