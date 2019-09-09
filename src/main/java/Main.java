@@ -20,7 +20,7 @@ public class Main {
 
 
             Step step = new Step();
-            System.setProperty("webdriver.chrome.driver", "C:\\test\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver.exe");
             WebDriver driver = new ChromeDriver();
             WebDriverWait wait = new WebDriverWait(driver, 10);
 

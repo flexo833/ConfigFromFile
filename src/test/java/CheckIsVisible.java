@@ -14,7 +14,7 @@ import java.util.List;
 public class CheckIsVisible extends Assert {
     @Before
         public void SetUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\test\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver.exe");
 
 
     }

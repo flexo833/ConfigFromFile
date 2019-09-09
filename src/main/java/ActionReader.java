@@ -13,7 +13,7 @@ import java.util.List;
     static XSSFWorkbook readExcel() {
         XSSFWorkbook workbook = null;
         try {
-            FileInputStream file = new FileInputStream(new File("C:\\test\\file.xlsx"));
+            FileInputStream file = new FileInputStream(new File("src/resources/file.xlsx"));
             workbook = new XSSFWorkbook(file);
         } catch (Exception e) {
             e.printStackTrace();
