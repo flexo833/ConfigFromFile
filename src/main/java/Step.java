@@ -50,6 +50,7 @@ class Step {
                     e.printStackTrace();
                 }
 
+
             }
         } else throw new Exception("Action is not valid");
 
@@ -60,6 +61,7 @@ class Step {
 
         boolean b = driver.findElement(By.xpath(param)).isDisplayed();
         System.out.println(b);
+
     }
 
     private boolean verifyActionIsValid(String action) {
